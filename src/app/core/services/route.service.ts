@@ -4,11 +4,11 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class BookingService {
+export class RouteService {
 
   constructor(private http:HttpClient) { }
 
-  addbooking(bookingData:any){
-    return this.http.post(`/booking/addbooking`,bookingData)
+  getAllRoutes(){
+    return this.http.get(`/route/getRoutes`)
   }
 }

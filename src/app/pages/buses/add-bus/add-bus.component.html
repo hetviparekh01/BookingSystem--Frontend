@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-header">
+        Add New Bus
+    </div>
+    <div class="card-body">
+        <form [formGroup]="busForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="busNumber">Bus Number</label>
+                <input type="text" class="form-control" id="busNumber" placeholder="Enter bus number">
+            </div>
+            <div class="form-group">
+                <label for="routeSelect">Route</label>
+                <select class="form-control" id="routeSelect" *ngFor="let route of routeData">
+                    <option value="" disabled selected>Select a route</option>
+                    <option [value]="route._id">{{route.name}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="amenities">Amenities</label>
+                <input type="text" class="form-control" id="amenities" placeholder="Enter amenities">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Bus</button>
+        </form>
+    </div>
+</div>
+

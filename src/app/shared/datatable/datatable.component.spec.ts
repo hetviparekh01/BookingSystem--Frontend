@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AllBusesComponent } from './all-buses.component';
+import { DatatableComponent } from './datatable.component';
 
-describe('AllBusesComponent', () => {
-  let component: AllBusesComponent;
-  let fixture: ComponentFixture<AllBusesComponent>;
+describe('DatatableComponent', () => {
+  let component: DatatableComponent;
+  let fixture: ComponentFixture<DatatableComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AllBusesComponent]
+      declarations: [DatatableComponent]
     });
-    fixture = TestBed.createComponent(AllBusesComponent);
+    fixture = TestBed.createComponent(DatatableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

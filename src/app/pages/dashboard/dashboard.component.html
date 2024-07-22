@@ -14,19 +14,30 @@
     </button>
 </form>
 <div class="mt-4">
-    <div class="card-columns">
-        <div class="card" *ngFor="let bus of busData">
-            <div class="card-body">
-                <h5 class="card-title">{{ bus.busNumber }}</h5>
-                <p class="card-text">Seating Capacity: {{ bus.seatingCapacity }}</p>
-                <p class="card-text">Amenities: {{ bus.amenities }}</p>
-                <p class="card-text">Route ID: {{ bus.route }}</p>
-                <p class="card-text">From Station: {{ bus.fromStation.name }}</p>
-                <p class="card-text">To Station: {{ bus.toStation.name }}</p>
-                <p class="card-text">Booked Seats: {{ bus.bookedSeats.join(', ') }}</p>
-                <p class="card-text">Created At: {{ bus.createdAt | date }}</p>
-                <p class="card-text">Updated At: {{ bus.updatedAt | date }}</p>
-                <button class="btn btn-sm btn-primary" (click)="showParticularBus(bus._id)">Book Seat</button>
+    <div class="card" *ngFor="let schedule of busData">
+        <div class="card-header fw-bold">
+            Bus Number: {{ schedule.busNumber }}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Amenities: {{ schedule.amenities }}</h5>
+            <p class="card-text">Seating Capacity: {{ schedule.seatingCapacity }}</p>
+            <p class="card-text">Available Seats: {{ schedule.availableSeats.join(', ') }}</p>
+            <p class="card-text">Booked Seats: {{ schedule.bookedSeats.join(', ') }}</p>
+            <div *ngFor="let route of schedule.routeDetail">
+                <p class="card-text">
+                    Route: {{ route.fromStation }} to {{ route.toStation }}<br>
+                    Distance: {{ route.distancekm }} km<br>
+                    Time: {{ route.timeMin }} min
+                </p>
+            </div>
+            <div *ngFor="let scheduleItem of schedule.scheduleData">
+                <p class="card-text">
+                    Departure Time: {{ scheduleItem.departureTime }}<br>
+                    Fare: {{ scheduleItem.totalFare | currency }}
+                </p>
+                <button type="button" class="btn btn-primary" (click)="showParticularBus(scheduleItem._id)">
+                    Book Bus  
+                </button >
             </div>
         </div>
     </div>

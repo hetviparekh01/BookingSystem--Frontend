@@ -7,6 +7,8 @@ import { Injectable } from '@angular/core';
 export class BusScheduleService {
 
   constructor(private http:HttpClient) { }
-
+  getBusScheduleById(scheduleId:string){
+    return this.http.get<any>(`/busSchedule/getbusScheduleById/${scheduleId}`)
+  }
   
 }

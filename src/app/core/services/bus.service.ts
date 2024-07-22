@@ -14,4 +14,11 @@ export class BusService {
   getBusById(busId:string){
     return this.http.get(`/bus/getBusById/${busId}`);
   }
+  getAllBuses(){
+    return this.http.get(`/bus/getAllBuses`)
+  }
+
+  addBus(busData:any){
+    return this.http.post(`/bus/addbus`,busData)
+  }
 }

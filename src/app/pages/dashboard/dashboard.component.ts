@@ -9,6 +9,7 @@ import { BusService } from 'src/app/core/services/bus.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit{
+
   constructor(private busService:BusService,
     private fb:FormBuilder,
     private router:Router
@@ -23,14 +24,12 @@ export class DashboardComponent implements OnInit{
     })
   }
 
-  
-  
-  
   searchBus(){
       if(this.searchBusForm.valid){
         this.busService.getBuses(this.searchBusForm.value).subscribe({
           next: (response:any) => {
               if(response.status){
+                console.log(response);
                 this.busData=response.data
               }
           },
@@ -40,7 +39,6 @@ export class DashboardComponent implements OnInit{
         })
       }
   }
-
   showParticularBus(busId:string){
     this.router.navigate([`/buses/particularbus/${busId}`])
   }
