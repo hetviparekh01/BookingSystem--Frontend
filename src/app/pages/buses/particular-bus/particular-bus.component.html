@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="card-header">
+      Bus Details
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <p><strong>Bus Number:</strong> {{ busData?.busNumber }}</p>
+          <p><strong>Seating Capacity:</strong> {{ busData?.seatingCapacity }}</p>
+          <p><strong>Amenities:</strong> {{ busData?.amenities }}</p>
+        </div>
+        <div class="col-md-6">
+          <p><strong>Route:</strong> {{ busData?.route }}</p>
+          <p><strong>Booked Seats:</strong> {{ busData?.bookedSeats }}</p>
+          <p><strong>Created At:</strong> {{ busData?.createdAt }}</p>
+          <p><strong>Updated At:</strong> {{ busData?.updatedAt }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      Book a Bus Seat
+    </div>
+    <div class="card-body">
+      <form [formGroup]="bookSeatForm" (ngSubmit)="bookSeat()">
+        <div class="form-group">
+          <label for="seatNumber">Seat Number</label>
+          <input type="number" class="form-control" id="seatNumber" placeholder="Enter seat number"
+                 formControlName="seatNumber">
+        </div>
+        <button type="submit" class="btn btn-primary">Book Seat</button>
+      </form>
+    </div>
+  </div>
+  
+  

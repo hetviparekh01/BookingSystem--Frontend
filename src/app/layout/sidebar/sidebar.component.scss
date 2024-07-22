@@ -1,0 +1,60 @@
+$primary: #405D72;
+$secondary: white;
+
+.no-arrow .accordion-button::after {
+    display: none !important;
+}
+
+// .accordion-button {
+//     background-color: $primary;
+// }
+.sidebar{
+    width: 230px;
+    height: 100vh;
+    background-color: $primary;
+}
+
+.accordion-item {
+    border: none;
+
+}
+// .accordion-button {
+//     color: $secondary !important;
+// }
+
+.accordion-button:focus {
+    z-index: 3;
+    outline: 0;
+    box-shadow: none;
+}
+
+.accordion {
+
+    --bs-accordion-bg: none;
+}
+
+.offcanvas {
+    background-color: #f8f9fa;
+    --bs-offcanvas-width: 250px;
+}
+
+.active {
+    background-color: $secondary;
+    color: $primary;
+    font-weight: bolder;
+}
+a{
+    text-decoration: none;
+    color: $secondary;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+a:hover {
+    background-color: $secondary;
+    color: $primary;
+    font-weight: bolder;
+    border-radius: 5px;
+}
+// .dashboardlink {
+//     text-decoration: none;
+// }

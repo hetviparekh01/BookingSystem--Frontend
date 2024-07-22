@@ -1,0 +1,33 @@
+<form [formGroup]="searchBusForm" (ngSubmit)="searchBus()">
+    <div class="form-group">
+        <label for="fromStation">From Station</label>
+        <input type="text" class="form-control" id="fromStation" placeholder="Enter from station"
+            formControlName="fromStation">
+    </div>
+    <div class="form-group">
+        <label for="toStation">To Station</label>
+        <input type="text" class="form-control" id="toStation" placeholder="Enter to station"
+            formControlName="toStation">
+    </div>
+    <button type="submit" class="btn btn-primary">
+        Search Bus
+    </button>
+</form>
+<div class="mt-4">
+    <div class="card-columns">
+        <div class="card" *ngFor="let bus of busData">
+            <div class="card-body">
+                <h5 class="card-title">{{ bus.busNumber }}</h5>
+                <p class="card-text">Seating Capacity: {{ bus.seatingCapacity }}</p>
+                <p class="card-text">Amenities: {{ bus.amenities }}</p>
+                <p class="card-text">Route ID: {{ bus.route }}</p>
+                <p class="card-text">From Station: {{ bus.fromStation.name }}</p>
+                <p class="card-text">To Station: {{ bus.toStation.name }}</p>
+                <p class="card-text">Booked Seats: {{ bus.bookedSeats.join(', ') }}</p>
+                <p class="card-text">Created At: {{ bus.createdAt | date }}</p>
+                <p class="card-text">Updated At: {{ bus.updatedAt | date }}</p>
+                <button class="btn btn-sm btn-primary" (click)="showParticularBus(bus._id)">Book Seat</button>
+            </div>
+        </div>
+    </div>
+</div>
