@@ -6,6 +6,7 @@ import { ParticularBusComponent } from './particular-bus/particular-bus.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { GetAllBusesComponent } from './get-all-buses/get-all-buses.component';
 import { AddBusComponent } from './add-bus/add-bus.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AddBusComponent } from './add-bus/add-bus.component';
   imports: [
     CommonModule,
     BusesRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class BusesModule { }

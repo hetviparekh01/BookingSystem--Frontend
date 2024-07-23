@@ -35,13 +35,14 @@ export class AddBusComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.busForm.value);
       if(this.busForm.valid){
          this.busService.addBus(this.busForm.value).subscribe({
           next:(response:any)=>{
             if(response.status){
               Swal.fire({
                 icon: "success",
-                title: "Your work has been saved",
+                text:response.message,
                 showConfirmButton: false,
                 timer: 1500
               });
@@ -49,7 +50,7 @@ export class AddBusComponent implements OnInit {
               Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Something went wrong!",
+                text: response.message,
               });
             }
           },

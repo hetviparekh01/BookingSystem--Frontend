@@ -10,5 +10,7 @@ export class BusScheduleService {
   getBusScheduleById(scheduleId:string){
     return this.http.get<any>(`/busSchedule/getbusScheduleById/${scheduleId}`)
   }
-  
+  getAllSchedules(){
+    return this.http.get<any>(`/busSchdedule/getbusSchedules`) 
+  }
 }
