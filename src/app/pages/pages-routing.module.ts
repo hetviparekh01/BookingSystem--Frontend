@@ -19,6 +19,14 @@ const routes: Routes = [
     path: 'schedule',
     loadChildren: () => import('./busschedule/busschedule.module').then(m => m.BusscheduleModule)
   },
+  {
+    path:'route',
+    loadChildren:()=>import('./routes/routes.module').then(m=>m.RoutesModule)
+  },
+  {
+    path:'station',
+    loadChildren:()=>import('./station/station.module').then(m=>m.StationModule)
+  }
 ];
 
 @NgModule({

@@ -11,4 +11,7 @@ export class RouteService {
   getAllRoutes(){
     return this.http.get(`/route/getRoutes`)
   }
+  addRoutes(routeData:any){
+    return this.http.post(`/route/addRoute`,routeData)
+  }
 }

@@ -10,9 +10,9 @@
             </div>
             <div class="form-group">
                 <label for="routeSelect">Route</label>
-                <select class="form-control" id="routeSelect" *ngFor="let route of routeData" formControlName="route">
+                <select class="form-control" id="routeSelect"  formControlName="route">
                     <option value="" disabled selected>Select a route</option>
-                    <option [value]="route._id">{{route.name}}</option>
+                    <option *ngFor="let route of routeData" [value]="route._id">{{route.name}}</option>
                 </select>
             </div>
             <div class="form-group">
