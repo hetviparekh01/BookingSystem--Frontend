@@ -3,7 +3,11 @@
     <form id="routeForm" [formGroup]="routeForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label for="routeName">Route Name</label>
-            <input type="text" class="form-control" id="routeName" placeholder="Enter route name" required>
+            <input type="text" class="form-control" id="routeName" placeholder="Enter route name" required formControlName="name">
+        </div>
+        <div class="form-group">
+            <label for="routeName">Distance</label>
+            <input type="number" class="form-control" id="routeName" placeholder="Enter total distance" required formControlName="distance">
         </div>
         <div class="row my-2">
             <div class="col-lg-11">
@@ -19,7 +23,7 @@
                     <div class="row">
                         <div class="col-lg-11">
                             <label for="stations">Station:{{i+1}}</label>
-                            <select class="form-select" aria-label="Default select example" formControlName="name">
+                            <select class="form-select" aria-label="Default select example" formControlName="stationId">
                                 <option value="" disabled selected>Select a route</option>
                                 <option *ngFor="let sta of stationData" [value]="sta._id">{{sta.name}}</option>
                             </select>
@@ -35,8 +39,7 @@
         </div>
 
 
-
-        <div class="row my-5">
+        <div class="row my-3">
             <div class="col-lg-10">
                 <h4>Stops List</h4>
             </div>
@@ -53,7 +56,7 @@
                             <div class="border p-3">
                                     <div class="form-group">
                                         <label for="fromStation">From Station</label>
-                                        <select class="form-control" id="fromStation" required>
+                                        <select class="form-control" id="fromStation" required formControlName="fromStation">
                                             <option value="" disabled selected>Select a route</option>
                                             <option *ngFor="let sta of stationData" [value]="sta._id">{{sta.name}}
                                             </option>
@@ -61,7 +64,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="toStation">To Station</label>
-                                        <select class="form-control" id="toStation" required>
+                                        <select class="form-control" id="toStation" required formControlName="toStation">
                                             <option value="" disabled selected>Select a route</option>
                                             <option *ngFor="let sta of stationData" [value]="sta._id">{{sta.name}}
                                             </option>
@@ -70,12 +73,12 @@
                                     <div class="form-group">
                                         <label for="distanceKm">Distance (km)</label>
                                         <input type="number" class="form-control" id="distanceKm" placeholder="Distance"
-                                            required>
+                                            required formControlName="distancekm">
                                     </div>
                                     <div class="form-group">
                                         <label for="timeMin">Time (min)</label>
                                         <input type="number" class="form-control" id="timeMin" placeholder="Time"
-                                            required>
+                                            required formControlName="timeMin">
                                     </div>
                             </div>
                         </div>

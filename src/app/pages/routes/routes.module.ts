@@ -5,6 +5,7 @@ import { RoutesRoutingModule } from './routes-routing.module';
 import { GetAllRoutesComponent } from './get-all-routes/get-all-routes.component';
 import { AddRoutesComponent } from './add-routes/add-routes.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RoutesRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class RoutesModule { }

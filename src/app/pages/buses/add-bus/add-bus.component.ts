@@ -29,7 +29,20 @@ export class AddBusComponent implements OnInit {
       next:(response:any)=>{
         if(response.status){
           this.routeData=response.data
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: response.message,
+          });
         }
+      },
+      error: (error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error.error.message,
+        });
       }
     })
   }
